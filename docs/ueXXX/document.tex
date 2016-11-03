@@ -1,0 +1,39 @@
+\documentclass[
+	11pt,								% globale Schriftgröße
+	parskip=half-,						% setzt Absatzabstand hoch
+	paper=a4,							% Format
+	english,ngerman,					% lädt Sprachpakete
+	]{scrartcl}							% Dokumentenklasse
+	
+\input{src/header}						% bindet Header ein (WICHTIG)
+
+% /////////////////////// BEGIN DOKUMENT /////////////////////////
+\begin{document}
+
+% /////////////////////// BEGIN TITLEPAGE /////////////////////////
+\begin{titlepage}
+	\subject{Jochen Schiller}					% <-- Hier Dozenten-Name eintragen
+	\title{Rechnerarchitektur}	% <-- Hier Lehrveranst.Name eintragen
+	\subtitle{\Large WS 16/17, Übung X}	% <-- Hier Semester und Nummer eintragen
+	\author{%
+    	Tutor: Leonard König\\			% <-- Hier Tutor-Namen eintragen
+        Tutorium: Donnerstag, 16-18 Uhr\\ \\	% <-- Hier Tutoriumzeit eintragen
+        Studierende: Kathrin Le und Nils Koppelmann}		% <-- Hier eure Namen eintragen
+	\date{\normalsize \today}					% aktuelles Datum mit \today
+\end{titlepage}
+
+\maketitle								% Erstellt das Titelblatt
+\vspace*{-11cm}							% rückt Logo an den oberen Seitenrand
+\makebox[\dimexpr\textwidth+1cm][r]{	%rechtsbündig und geht rechts 1cm über Layout hinaus
+	\includegraphics[width=0.4\textwidth]{src/fu_logo} % fügt FU-Logo ein
+}
+% /////////////////////// END TITLEPAGE /////////////////////////
+
+\vspace{8.2cm}							% Abstand
+\rule{\linewidth}{0.8pt}				% horizontale Linie
+
+% /////////////////////// Aufgabe 1 /////////////////////////
+\section*{\Aufgabe{1}{Punkte}}
+
+% /////////////////////// END DOKUMENT /////////////////////////
+\end{document}
