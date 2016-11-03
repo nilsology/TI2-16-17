@@ -170,3 +170,12 @@
 \footskip = 10ex			% Abstand zw. Fußzeile und Grundlinie letzter Textzeile
 \parindent 0pt			% verhindert Einrückung der 1. Zeile eines Absatzes
 \setkomafont{sectioning}{\rmfamily\bfseries}% setzt Ü-Schriften in Serifen, {disposition}
+
+\lstdefinelanguage{asm} {
+  morekeywords={
+    nop,movl,pushl,popl,cmpl,testl,leal,cmovl,jmp,je,jne,jz,jnz,jg,jge,jl,jle,addl,subl,imul,idiv,cdq,incl,decl,negl,andl,orl,xorl,notl,shrl,shll,sarl,sall,ret,leave,call,setg,setl,setge,setle,setne,sete,movzbl,eax,ebx,ecx,edx,edi,esi,ebp,esp,al,bl,cl,dl
+  },
+  sensitive=false,
+  morecomment=[l]{\#},
+  morestring=[b]"
+}
