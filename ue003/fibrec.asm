@@ -8,12 +8,33 @@ asm_fib_rek:
   CMP rax, 1
   JBE exit
   DEC rax
-  PUSH rax         ; save N-1
-  CALL asm_fib_rek   ; computing FIB(n-1)to rax
-  XCHG rax,0[ESP]  ; swap FIB(n-1) for saved N-1 
-  DEC  rax         ; = N-2
-  CALL asm_fib_rek   ; computing FIB(N-2) to rax
-  POP  rdi         ; = FIB(N-1)
-  ADD  rax,ECX     ; = FIB(N-1)+FIB(N-2)
+  PUSH rax
+  CALL asm_fib_rek 
+  MOV rax, 0
+  DEC  rax 
+  CALL asm_fib_rek
+  POP  rdi
+  ADD  rax, rbx
   exit:
   RET
+
+GLOBAL asm_fib_it
+
+asm_fib_it:
+
+  MOV r8, 0
+  MOV r9, 1
+  MOV rax, 0
+
+  loop:
+  CMP rdi, 0
+  JE end
+
+  MOV r8, r9
+  MOV r9, rax
+  MOV rax, r8
+  ADD rax, r9
+  DEC rdi
+  JMP loop
+
+  end: ret
